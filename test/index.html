@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+<script>
+  var config = {
+    apiKey: "AIzaSyBVHGvEse-qQGAl47LfV5S91-UjMD-yH-w",
+  authDomain: "shivam-pai-test-gateway.firebaseapp.com",
+  databaseURL: "https://shivam-pai-test-gateway-default-rtdb.firebaseio.com",
+  projectId: "shivam-pai-test-gateway",
+  storageBucket: "shivam-pai-test-gateway.appspot.com",
+  messagingSenderId: "647857283691",
+  appId: "1:647857283691:web:174cac6c7d9bb3893b472e",
+  measurementId: "G-YGRBHFEH66"
+  };
+  firebase.initializeApp(config);
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="height: 100%;" öncontextmenu="return false" onload='load()'>
+  <div class="container-fluid" style="height: 100%;">
+      <div class="row"><div class="col-lg-12 col-sm-12" style="background-color: #555;vertical-align: middle;padding: 10px;color: white;"><button class='btn btn-danger' onclick="endtest()">&nbsp;&nbsp;&nbsp;End Test&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp; <label id="testname">Test</label>
+      </div></div>
+      <div class="row" style="height: 91%;">
+        <div class="col-lg-9 col-sm-12">
+          <h3 id="qlabel">Question</h3><hr>
+          <input type="radio" name="op" class="op" id="op1"><label for="op1" class="oplabel" id="op1text">OP 1</label><br>
+          <input type="radio" name="op" class="op" id="op2"><label for="op2" class="oplabel" id="op2text">OP 2</label><br>
+          <input type="radio" name="op" class="op" id="op3"><label for="op3" class="oplabel" id="op3text">OP 3</label><br>
+          <input type="radio" name="op" class="op" id="op4"><label for="op4" class="oplabel" id="op4text">OP 4</label><br>
+        <button class="btn btn-primary" onclick="nextQuestion()">Save & Next</button></div>
+        <div id="panel" style="background-color: #555;height: 100%;box-shadow: 5px 5px 18px white;" class="col-lg-3 col-sm-12">
+         <section id="pannel-inner">
+           <h2 style="color: white; ">Panel<hr></h2>
+           <div style="overflow:auto;height: 450px;width: 100%;">
+           <table id="table" style="  overflow-y: scroll ;background-color: white;box-shadow: 5px 5px 18px lightgray;" class="table"><tbody>
+             <tr>
+             <th>Question Number</th><th>Choosed Option</th>
+             </tr>
+           </tbody></table></div>
+         </section>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

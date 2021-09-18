@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Test</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+<script>
+  var config = {
+    apiKey: "AIzaSyBVHGvEse-qQGAl47LfV5S91-UjMD-yH-w",
+  authDomain: "shivam-pai-test-gateway.firebaseapp.com",
+  databaseURL: "https://shivam-pai-test-gateway-default-rtdb.firebaseio.com",
+  projectId: "shivam-pai-test-gateway",
+  storageBucket: "shivam-pai-test-gateway.appspot.com",
+  messagingSenderId: "647857283691",
+  appId: "1:647857283691:web:174cac6c7d9bb3893b472e",
+  measurementId: "G-YGRBHFEH66"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<script src="main.js"></script>
+<body style="height: 100%;" öncontextmenu="return false" onload='load()'>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>      
+        <button disabled class="tablinks" onclick="openTab(event, 'Questions')">Questions</button>
+        <button disabled class="tablinks" onclick="openTab(event, 'Users')">Users</button>
+      </div>
+      <div id="Settings" class="tabcontent"><h3>Settings</h3>
+      <input type="name" class="form-control" id="testname" placeholder="Test Name"><input type="text" id="password" class="form-control" placeholder="Password"><button class="form-control" onclick="saveSettings()">Save</button></div>
+      <div id="Questions" class="tabcontent">
+        <h3>Questions</h3>
+        <input type="text" id="q" class="form-control" placeholder="Question 1"><input type="text" class="form-control" id="op1" placeholder="Option 1">
+          <input type="text" class="form-control" id="op2" placeholder="Option 2">
+     <input type="text" class="form-control" id="op3" placeholder="Option 3">
+      <input type="text" class="form-control" id="op4" placeholder="Option 4">
+      <button class="form-control" onclick="save()">Save</button><button class="form-control" onclick="next()">Next</button>
+</div>
+<div id="Users" class="tabcontent">
+  <h3>Users</h3>
+  <input type="text" id="username" placeholder="User Name" class="form-control">
+  <input type="number" id="userid" placeholder="User ID"   class="form-control">
+  <button class="form-control" onclick="saveUsers()">Save</button><button class="form-control" onclick="nextUser()">Next</button>
+  
+</div>      
+</body>
+</html>
+<style>/* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    </style>
